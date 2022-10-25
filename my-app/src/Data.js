@@ -1,0 +1,211 @@
+export const Users = [
+    {
+      id:1,
+      profilePicture: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/1e4991ed-e574-41e1-b9e2-544fcb4eb1bf/DSC00563.jpg?format=1000w",
+      username: "Bolin",
+      password: 123,
+    },
+    {
+      id:2,
+      profilePicture: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/25fc8dec-94fb-4ff1-a466-5e692734dc61/DSC06278.jpg?format=1500w",
+      username: "Jenifer",
+      password: 123,
+    },
+    {
+      id:3,
+      profilePicture: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/36819115-ff78-47a5-9680-93d7ffdf85c1/DSC06966.jpg?format=1000w", 
+      username: "Maxine",
+      password: 123,
+    },
+    {
+      id:4,
+      profilePicture: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/234d3aa0-3ece-40c5-9297-825f39e5495f/DSC06055.jpg?format=2500w", 
+      username: "Shan",
+      password: 123,
+    },
+    {
+      id:5,
+      profilePicture: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/db38a619-0fcb-44c4-a9d2-1f714f486a40/DSC06851.jpg?format=1000w", 
+      username: "Annie",
+      password: 123,
+    },
+    {
+      id:6,
+      profilePicture: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/5b94a2c5-c5c0-459d-a208-0080f51a89a9/DSC00287.jpg?format=1000w", 
+      username: "Yang",
+      password: 234,
+    },
+    {
+      id:7,
+      profilePicture: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/89f046d0-01f2-49ed-9d18-133b399c2e76/IMG_0842.JPG?format=750w", 
+      username: "Claire",
+      password: 234,
+    },
+    {
+      id:8,
+      profilePicture: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/0d35f71e-2dd9-4975-8013-ed4eff640fa0/DSC03026.jpg?format=500w", 
+      username: "Santa",
+      password: 234,
+    },
+    {
+      id:9,
+      profilePicture: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/0ff7e2b7-f528-4b00-96ce-7c63de4c316c/DSC03555.jpg?format=500w", 
+      username: "Charles",
+      password: 234,
+    },
+    {
+      id:10,
+      profilePicture: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/b3d35252-39f2-401e-babb-6f2c82c3b8fe/DSC02636-%E7%B7%A8%E8%BC%AF-2%E6%8B%B7%E8%B2%9D.jpg?format=500w", 
+      username: "Boris",
+      password: 234,
+    },
+
+  ];
+  
+  export const PostsLeft = [
+    {
+      id: 1,
+      desc: "Front view today:>",
+      photo: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/9228f5d2-1b24-4e5e-81fc-7196994eb088/DSC04410.jpg?format=750w",
+      date: "5 mins ago",
+      userId: 1,
+    },
+    {
+      id: 2,
+      desc: "Bought a new car",
+      photo: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/2ed3b23e-c6dd-4f67-9d91-21827d4e03a7/DSC00762-Edit-Edit.jpg?format=750w",
+      date: "15 mins ago",
+      userId: 8,
+    },
+    {
+      id: 3,
+      desc: " I love Porsche's Interior",
+      photo: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/524def1b-8bbc-4f30-855b-c8de72b18ca9/DSC08793.jpg?format=500w",
+      date: " 4 hours ago",
+      userId: 10,
+    },
+    {
+      id: 4,
+      desc: " I'm in Barcelona Babe",
+      photo: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/66dadea1-2932-44f3-8aae-49630f77d672/DSC01200-%E7%B7%A8%E8%BC%AF-%E7%B7%A8%E8%BC%AF-f.png?format=500w",
+      date: "3 hours ago",
+      userId: 7,
+    },
+    {
+      id: 5,
+      desc: "red interior for racing spyder",
+      photo: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/2165c4e5-9829-45c7-a27c-08da9f74a341/DSC08883-Edit.jpg?format=500w",
+      date: "3 hours ago",
+      userId: 3,
+    },
+    {
+      id: 6,
+      desc: "guess the car?",
+      photo: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/831ac5d1-a76b-40a1-840b-827e209fb45d/DSC04675.jpg?format=500w",
+      date: "3 hours ago",
+      userId: 8,
+    },
+    {
+      id: 7,
+      desc: "lovely one",
+      photo: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/085ddc68-cc44-462b-89a6-315636f3275d/DSC03978-4.jpg?format=500w",
+      date: "3 hours ago",
+      userId:10,
+    },
+    {
+      id: 8,
+      desc: "yooo they landed on me",
+      photo: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/1582954047101-EFUER2JS0HNEA1L7KLOE/DSC04819-3.jpg?format=500w",
+      date: "3 hours ago",
+      userId: 5,
+    },
+    {
+      id: 9,
+      desc: "cyberpunk feeling",
+      photo: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/9217a593-106a-48fc-bbf6-c74c8b588af9/DSC03331.jpg?format=500w",
+      date: "3 hours ago",
+      userId: 9,
+    },
+    {
+      id: 10,
+      desc: "melbourne night",
+      photo: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/c074f708-5dd7-4dbd-889d-ba7864b35159/DSC03695.jpg?format=500w",
+      date: "3 hours ago",
+      userId: 10,
+    },
+  ];
+
+
+  export const Posts = [
+    {
+      id: 1,
+      desc: "lovely trail",
+      photo: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/1583155026137-33V0OJB0S67E6O2RNWQ2/image-asset.jpeg?format=500w",
+      date: "20 mins ago",
+      userId: 2,
+    },
+    {
+      id: 2,
+      desc: "going to church on Sunday",
+      photo: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/1582952973055-I0ALDVQV8N7ECL5Q8P6U/DSC03182-%E7%B7%A8%E8%BC%AF.jpg?format=500w",
+      date: "30 minute ago",
+      userId: 3,
+    },
+    {
+      id: 3,
+      desc: "guess what I'm doing?",
+      photo: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/1582954205811-23G1Q7AAV33O7Y27M6AW/DSC05244.jpg?format=500w",
+      date: "an hour ago",
+      userId: 7,
+    },
+    {
+      id: 4,
+      desc: "it looks like a philosopher",
+      photo: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/1582954725348-OV7UC4VO931SIUME8F2Z/DSC05990-4.jpg?format=500w",
+      date: "two hours ago",
+      userId: 6,
+    },
+    {
+      id: 5,
+      desc: "cats yawm <3",
+      photo: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/4fcfaf05-29d3-4fc2-8fe3-99fee0d8470c/DSC00938.jpg?format=500w",
+      date: "3 hours ago",
+      userId: 9,
+    },
+    {
+      id: 6,
+      desc: "beautiful sky",
+      photo: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/c6a62d72-281a-492c-b982-e3191cdb79a7/DSC02704.jpg?format=500w",
+      date: "3 hours ago",
+      userId: 4,
+    },
+    {
+      id: 7,
+      desc: "Family",
+      photo: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/1584071098778-2DQZ0QQ17EC2X0SJ89WI/DSC03921-3.jpg?format=500w",
+      date: "3 hours ago",
+      userId: 1,
+    },
+    {
+      id: 8,
+      desc: "took a lot of effort to get this shot",
+      photo: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/b0fa9471-9a44-4f47-972e-c842ebf4e6c8/DSC03117-%E7%B7%A8%E8%BC%AF-3.jpg?format=500w",
+      date: "3 hours ago",
+      userId: 8,
+    },
+    {
+      id: 9,
+      desc: "to the sea",
+      photo: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/1582955026311-U5GAT7ISZTLF2JV9Q3IX/DSC09849.jpg?format=500w",
+      date: "3 hours ago",
+      userId: 10,
+    },
+    {
+      id: 10,
+      desc: "Sydney Night",
+      photo: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/1582953403344-CVYIQEXTESAMCO8N6Z52/DSC03676-2.jpg?format=500w",
+      date: "3 hours ago",
+      userId: 5,
+    },
+  ];
+  
