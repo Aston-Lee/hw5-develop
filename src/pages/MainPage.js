@@ -107,26 +107,6 @@ export default function MainPage() {
                     </div>
                 </div>
             </div>
-
-
-
-            {/* <div className="pageformat">
-                <div className="gridformat">
-                    <div className="gridpost" tabIndex={0}>
-                        {PostArray.map((p) => (
-                            <Post key={p.index} post={p} />
-                        ))}
-                    </div>
-                </div>
-                <div className="gridformat">
-                    <div className="gridpost" tabIndex={0}>
-                        {postarray.map((p) => (
-                            <Post key={p.index} post={p} jsonusers={users} />
-                        ))}
-                    </div>
-                </div>
-            </div> */}
-
         </>
 
     )

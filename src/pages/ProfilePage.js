@@ -138,6 +138,14 @@ export default function ProfilePage() {
         event.target.value = null;
     }
 
+    //set url for profile picture
+    if (localStorage.getItem("newuser") == false) {
+        localStorage.setItem("profilepicture", "https://www.w3schools.com/howto/img_avatar.png")
+    } else {
+        localStorage.setItem("profilepicture", users.filter(user => user.username === localStorage.getItem("username"))[0].profilePicture )
+    }
+    // const url = users.filter(user => user.username === localStorage.getItem("username"))[0].profilePicture
+
     return (
         <div className='RegFormOuter'>
             <form className='RegFormContainer' id="Profilepage" onSubmit={handleSubmit} >
@@ -149,7 +157,8 @@ export default function ProfilePage() {
                     onChange={uploadhandleFileChange}
                 />
                 <div>
-                    <img className='profilePicture' src={users.filter(user => user.username === localStorage.getItem("username"))[0].profilePicture} />
+                    {/* <img className='profilePicture' src={users.filter(user => user.username === localStorage.getItem("username"))[0].profilePicture} /> */}
+                    <img className='profilePicture' src={localStorage.getItem("profilepicture")} />
                 </div>
                 <button className='PostButton' onClick={uploadhandleClick}>
                     {/* <BiImageAdd className='videoPost'/> */}

@@ -27,15 +27,17 @@ export default function RegistrationPage() {
         console.log(verified)
         if (verified===true){
             // localStorage.setItem("user", JSON.stringify(Input));
-            localStorage.setItem("username", JSON.stringify(Input.username));
-            localStorage.setItem("displayname", JSON.stringify(Input.displayname));
-            localStorage.setItem("email", JSON.stringify(Input.email));
-            localStorage.setItem("phone", JSON.stringify(Input.phone));
-            localStorage.setItem("birthday", JSON.stringify(Input.birthday));
-            localStorage.setItem("zipcode", JSON.stringify(Input.zipcode));
-            localStorage.setItem("password1", JSON.stringify(Input.password1));
-            localStorage.setItem("password2", JSON.stringify(Input.password2));
-            localStorage.setItem("newuser", JSON.stringify(Input.newuser));
+            localStorage.setItem("username", Input.username);
+            localStorage.setItem("displayname",Input.displayname);
+            localStorage.setItem("email", Input.email);
+            localStorage.setItem("phone", Input.phone);
+            localStorage.setItem("birthday", Input.birthday);
+            localStorage.setItem("zipcode", Input.zipcode);
+            localStorage.setItem("password1", Input.password1);
+            localStorage.setItem("password2", Input.password2);
+            localStorage.setItem("newuser", true);
+            localStorage.setItem("catchphrase", "happy day");
+            localStorage.setItem("followed", "[]");
             navigate('/MainPage')
         }
     };
@@ -56,21 +58,6 @@ export default function RegistrationPage() {
         console.log(regdatadata);
         console.log(regdatadata.username);
         console.log(regdatadata.password);
-
-        // const userarray = Users.map(({username}) => username)
-        // const passwordarray = Users.map(({password}) => password)
-        // for (let i = 0; i < userarray.length; i++) {
-        //     console.log(userarray[i], passwordarray[i])
-        //     if (regdatadata.username == userarray[i] && regdatadata.password == passwordarray[i] ) {
-        //         console.log("found")
-        //         // prepare to login
-
-        //     }
-        // }
-        // show not found and encourage to go to register page
-
-        // rules for validation
-        // 
     }
 
     return (
