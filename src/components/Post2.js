@@ -3,7 +3,7 @@ import "./Post.css";
 import { Users } from '../Data';
 import { users } from '../users';
 
-export default function Post2({post}) {
+export default function Post2({post, username, newuser}) {
     return ( 
         <div className='post'>
             <div className='postWrapper'>

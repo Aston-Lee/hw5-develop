@@ -23,6 +23,7 @@ export default function MainPage() {
     const [posts, setPosts] = useState();
 
     let [filteredPosts, setFilteredPosts] = useState();
+    let [NewPost, setNewPost] = useState([]);
 
     const getUsersData = async () => {
         const response = await fetch(
@@ -76,13 +77,16 @@ export default function MainPage() {
 
                 <Topbar />
                 <div className="container">
-                    <NewPostSection username={localStorage.getItem("username")} posts={filteredPosts} setPosts={setFilteredPosts} />
+                    <NewPostSection username={localStorage.getItem("username")} posts={NewPost} setPosts={setNewPost} />
                     <Status />
                 </div>
             </header>
             <div className="pageformat">
                 <div className="gridformat">
                     <div className="gridpost" tabIndex={0}>
+                        {NewPost.map((p) => (
+                            <Post2 key={p.index} post={p} />
+                        ))}
                         {filteredPosts?.sort((a, b) => b.timestamp - a.timestamp).map(post => (
                             <Post2 post={post} key={post.id} username={username} newuser={newuser} />
                         ))}

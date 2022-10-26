@@ -8,6 +8,8 @@ export default function NewPost({username, posts, setPosts }) {
 
     const inputRef = useRef(null);
 
+    
+
     function gerneratePost() {
         var tmpuserid = localStorage.getItem("id");
         console.log(tmpuserid)
@@ -53,10 +55,7 @@ export default function NewPost({username, posts, setPosts }) {
                     <hr className='NewPostHr' />
                     <div className='NewPostBot'>
                         <div className='Options'>
-                            {/* <div className='Option'>
-                                <BiImageAdd type="button" onclick="document.getElementById('fileInput').click();" className='videoPost'/>
-                                <span className="videoPostText">Photo or Video</span>
-                            </div> */}
+
                             <div>
                                 <input
                                     style={{ display: 'none' }}
