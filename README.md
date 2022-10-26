@@ -1,9 +1,9 @@
 netid: yl258
 link: https://heavy-able.surge.sh/
 
-### for testing user(registered), please use 
-### username: Bolin
-### password: 123
+### for testing user(registered), please use json users, eg.
+### username: Bret 
+### password: Kulas Light     <- street address 
 
 # Getting Started with Create React App
 
