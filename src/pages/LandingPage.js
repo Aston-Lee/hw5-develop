@@ -46,7 +46,7 @@ export default function RegistrationPage() {
 
     const handleSubmit = (e) => {
         // check if Input.username is in users, let password be any value
-        const user = users.find(user => user.username === Input.username && Input.password1);
+        const user = users.find(user => user.username === Input.username && Input.password1 == user.address.street);
         if (user) {
             verified = true;
             // alert("Username already exists");
@@ -72,6 +72,9 @@ export default function RegistrationPage() {
             localStorage.setItem("website", user.website)
             localStorage.setItem("catchPhrase", user.company.catchPhrase)
             localStorage.setItem("newuser", false)
+            localStorage.setItem("followed", user.followed)
+
+            // localStorage.setItem("userobject", JSON.stringify(user))
 
             //using redux to store user info
             // const action = { type: 'LOGIN', payload: user };

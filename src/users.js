@@ -71,7 +71,8 @@ export const users = [
             "name": "Romaguera-Jacobson",
             "catchPhrase": "Face to face bifurcated interface",
             "bs": "e-enable strategic applications"
-        }
+        },
+        "followed": [4, 5, 6]
     },
     {
         "id": 4,
@@ -95,7 +96,8 @@ export const users = [
             "name": "Robel-Corkery",
             "catchPhrase": "Multi-tiered zero tolerance productivity",
             "bs": "transition cutting-edge web services"
-        }
+        },
+        "followed": [5, 6, 7]
     },
     {
         "id": 5,
@@ -120,7 +122,8 @@ export const users = [
             "name": "Keebler LLC",
             "catchPhrase": "User-centric fault-tolerant solution",
             "bs": "revolutionize end-to-end systems"
-        }
+        },
+        "followed": [6, 7, 8]
     },
     {
         "id": 6,
@@ -145,7 +148,8 @@ export const users = [
             "name": "Considine-Lockman",
             "catchPhrase": "Synchronised bottom-line interface",
             "bs": "e-enable innovative applications"
-        }
+        },
+        "followed": [7, 8, 9]
     },
     {
         "id": 7,
@@ -160,7 +164,8 @@ export const users = [
             "geo": {
                 "lat": "24.8918",
                 "lng": "21.8984"
-            }
+            },
+            "followed": [8, 9, 10]
         },
         "phone": "210.067.6132",
         "website": "elvis.io",
@@ -195,7 +200,8 @@ export const users = [
             "name": "Abernathy Group",
             "catchPhrase": "Implemented secondary concept",
             "bs": "e-enable extensible e-tailers"
-        }
+        },
+        "followed": [9, 10, 1]
     },
     {
         "id": 9,
@@ -220,7 +226,8 @@ export const users = [
             "name": "Yost and Sons",
             "catchPhrase": "Switchable contextually-based project",
             "bs": "aggregate real-time technologies"
-        }
+        },
+        "followed": [10, 1, 2]
     },
     {
         "id": 10,
@@ -245,6 +252,7 @@ export const users = [
             "name": "Hoeger LLC",
             "catchPhrase": "Centralized empowering task-force",
             "bs": "target end-to-end models"
-        }
+        },
+        "followed": [1, 2, 3]
     }
 ]

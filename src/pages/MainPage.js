@@ -36,7 +36,7 @@ export default function MainPage() {
         // getPostsData();
         axios.get('https://jsonplaceholder.typicode.com/posts')
         .then(response => {
-            console.log(response.data);
+            // console.log(response.data);
             // add random timestamp to each post
             const tmpposts = response.data.map(post => {
                 const timestamp = Math.floor(Math.random() * 1000000000000);
@@ -48,7 +48,7 @@ export default function MainPage() {
         });
     }, []);
     // console.log(users)
-    console.log(posts)
+    // console.log(posts)
     
     var username  = localStorage.getItem("username");
     var newuser = localStorage.getItem("newuser");
@@ -57,8 +57,10 @@ export default function MainPage() {
     if (newuser === true) {
         followList = []
     } else {
-        followList = [1, 2, 3]
+        // get followed from local storage and make it array
+        followList = localStorage.getItem("followed")
     }
+    console.log(followList)
     filteredPosts = posts?.filter(post => followList.includes(post.userId))
     console.log(filteredPosts)
 
