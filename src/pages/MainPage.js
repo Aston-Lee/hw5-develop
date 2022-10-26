@@ -7,6 +7,7 @@ import Topbar from "../components/topbar";
 import Post from "../components/Post"
 import Post2 from "../components/Post2"
 import NewPostSection from "../components/NewPostSection"
+import RightBar from "../components/RightBar"
 import Status from '../components/Status';
 import axios from 'axios';
 
@@ -90,8 +91,9 @@ export default function MainPage() {
                     </div>
                 </div>
                 <div className="gridformat">
-                    <div className="gridpost" tabIndex={0}>
-
+                
+                    <div className="rightbar" tabIndex={0}>
+                        <RightBar />
                     </div>
                 </div>
             </div>

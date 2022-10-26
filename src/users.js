@@ -21,7 +21,8 @@ export const users = [
             "name": "Romaguera-Crona",
             "catchPhrase": "Multi-layered client-server neural-net",
             "bs": "harness real-time e-markets"
-        }
+        },
+        "followed": [2, 3, 4]
     },
     {
         "id": 2,
@@ -45,7 +46,8 @@ export const users = [
             "name": "Deckow-Crist",
             "catchPhrase": "Proactive didactic contingency",
             "bs": "synergize scalable supply-chains"
-        }
+        },
+        "followed": [3, 4, 5]
     },
     {
         "id": 3,
