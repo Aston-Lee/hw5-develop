@@ -3,7 +3,8 @@ link: https://heavy-able.surge.sh/
 
 ### for testing user(registered), please use json users, eg.
 ### username: Bret 
-### password: Kulas Light     <- street address 
+### password: Kulas Light     
+hint :street address 
 
 # Getting Started with Create React App
 
