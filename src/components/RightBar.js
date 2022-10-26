@@ -2,6 +2,8 @@ import React from 'react'
 import Online from "./Online";
 import { users } from "../users";
 import { useState, useEffect } from 'react';
+import {AiOutlineSearch} from "react-icons/ai"
+import "./RightBar.css";
 
 export default function RightBar( {filteredPosts, setFilteredPosts}) {
 
@@ -26,6 +28,13 @@ export default function RightBar( {filteredPosts, setFilteredPosts}) {
     return (
         <>  
             <h4 className="rightbarTitle">Subscribed list</h4>
+            <div className="rightbarsearchbar">
+                <AiOutlineSearch className="searchIcon" />
+                <input
+                    placeholder="Search for friends"
+                    className="searchInput"
+                />
+            </div>
             {usersFiltered.map((u) => {
                 return (
                     <div>

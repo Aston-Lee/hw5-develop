@@ -122,3 +122,17 @@ end of header
     /* padding: 20px; */
     margin-bottom: 20px;
 }
+
+.searcharea {
+    position: fixed;
+    right: 50px;
+    bottom: 800px;
+    width: 30%;
+    border-radius: 20px;
+    /* used https://cssgenerator.org/box-shadow-css-generator.html */
+    box-shadow: 3px 6px 5px 0px rgba(0, 9, 28, 0.73);
+    -webkit-box-shadow: 3px 6px 5px 0px rgba(0, 9, 28, 0.73);
+    -moz-box-shadow: 3px 6px 5px 0px rgba(0, 9, 28, 0.73);
+    /* padding: 20px; */
+    margin-bottom: 20px;
+}

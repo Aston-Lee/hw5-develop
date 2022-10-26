@@ -9,6 +9,7 @@ import Post2 from "../components/Post2"
 import NewPostSection from "../components/NewPostSection"
 import RightBar from "../components/RightBar"
 import Status from '../components/Status';
+import SearchArea from '../components/SearchArea';
 import axios from 'axios';
 
 import { Posts, PostsLeft } from "../Data"
@@ -90,19 +91,14 @@ export default function MainPage() {
                         {filteredPosts?.sort((a, b) => b.timestamp - a.timestamp).map(post => (
                             <Post2 post={post} key={post.id} username={username} newuser={newuser} />
                         ))}
-                        {/* {posts && posts.map((post) => (
-                            <Post2
-                                key={post.id}
-                                post={post}
-                                username={username}
-                                newuser={newuser}
-                            />
-                        ))} */}
                     </div>
                 </div>
                 <div className="gridformat">
-
+                    <div className="searcharea" tabIndex={0}>
+                        <SearchArea />  
+                    </div>
                     <div className="rightbar" tabIndex={0}>
+                        
                         <RightBar filteredPosts={filteredPosts} setFilteredPosts={setFilteredPosts} />
                     </div>
                 </div>
