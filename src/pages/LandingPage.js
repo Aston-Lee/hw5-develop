@@ -114,6 +114,7 @@ export default function RegistrationPage() {
                             {" "}
                             username: <br />{" "}
                             <input
+                                data-testid="username" 
                                 type="type"
                                 value={Input.username}
                                 onChange={(e) =>
@@ -136,6 +137,7 @@ export default function RegistrationPage() {
                             {" "}
                             password <br />{" "}
                             <input
+                                data-testid="password" 
                                 type="password"
                                 name="password1"
                                 value={Input.password1}
@@ -153,7 +155,7 @@ export default function RegistrationPage() {
                         </p>
                     </div>
                     <div>
-                        <input className='Button' type="submit" defaultValue="submit" />
+                        <input className='Button' data-testid='submit' type="submit" defaultValue="submit" />
                     </div>
                     <div className='register'>
                         <button className='Button' onClick={() => navigate2('/RegistrationPage')}>register</button>
