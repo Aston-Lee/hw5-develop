@@ -22,7 +22,7 @@ export default function MainPage() {
     const [users, setUsers] = useState();
     const [posts, setPosts] = useState();
 
-    let [filteredPosts, setFilteredPosts] = useState([]);
+    let [filteredPosts, setFilteredPosts] = useState();
 
     const getUsersData = async () => {
         const response = await fetch(
@@ -33,24 +33,22 @@ export default function MainPage() {
 
     useEffect(() => {
         getUsersData();
-        // getPostsData();
         axios.get('https://jsonplaceholder.typicode.com/posts')
-        .then(response => {
-            // console.log(response.data);
-            // add random timestamp to each post
-            const tmpposts = response.data.map(post => {
-                const timestamp = Math.floor(Math.random() * 1000000000000);
-                return {...post, timestamp}
-            })
-            setPosts(tmpposts); 
-        }, error => {
-            console.log(error);
-        });
+            .then(response => {
+
+                // add random timestamp to each post
+                const tmpposts = response.data.map(post => {
+                    const timestamp = Math.floor(Math.random() * 1000000000000);
+                    return { ...post, timestamp }
+                })
+                setPosts(tmpposts);
+            }, error => {
+                console.log(error);
+            });
     }, []);
-    // console.log(users)
-    // console.log(posts)
-    
-    var username  = localStorage.getItem("username");
+
+
+    var username = localStorage.getItem("username");
     var newuser = localStorage.getItem("newuser");
 
     let followList = []
@@ -63,6 +61,12 @@ export default function MainPage() {
     console.log(followList)
     filteredPosts = posts?.filter(post => followList.includes(post.userId))
     console.log(filteredPosts)
+    
+    useEffect(() => {
+        setFilteredPosts(filteredPosts)
+    }, error => {
+        console.log(error);
+    });
 
 
     return (
@@ -72,15 +76,15 @@ export default function MainPage() {
 
                 <Topbar />
                 <div className="container">
-                    <NewPostSection username={localStorage.getItem("username")} posts={posts} setPosts={setPosts} />
+                    <NewPostSection username={localStorage.getItem("username")} posts={filteredPosts} setPosts={setFilteredPosts} />
                     <Status />
                 </div>
             </header>
             <div className="pageformat">
                 <div className="gridformat">
                     <div className="gridpost" tabIndex={0}>
-                        {filteredPosts?.sort((a,b) => b.timestamp - a.timestamp).map(post => (
-                            <Post2 post={post} key={post.id} username={username} newuser={newuser}/>
+                        {filteredPosts?.sort((a, b) => b.timestamp - a.timestamp).map(post => (
+                            <Post2 post={post} key={post.id} username={username} newuser={newuser} />
                         ))}
                         {/* {posts && posts.map((post) => (
                             <Post2
@@ -93,9 +97,9 @@ export default function MainPage() {
                     </div>
                 </div>
                 <div className="gridformat">
-                
+
                     <div className="rightbar" tabIndex={0}>
-                        <RightBar />
+                        <RightBar filteredPosts={filteredPosts} setFilteredPosts={setFilteredPosts} />
                     </div>
                 </div>
             </div>
