@@ -9,10 +9,13 @@ export default function Topbar({ posts, setPosts }) {
 
     const navigate2 = useNavigate();
     const [searchInput, setSearchInput] = useState("");
+    
     function handellogout() {
         localStorage.clear();
         navigate2("/");
     }
+
+    // localStorage.setItem("originalposts", JSON.stringify(posts))
 
     useEffect(() => {
         console.log(searchInput)
@@ -22,17 +25,20 @@ export default function Topbar({ posts, setPosts }) {
             const temp = [];
             // loop through the original posts and push to the temp array
             // if the post title includes the searchInput value
-            posts.forEach((post) => {
+            let originalpost = JSON.parse(localStorage.getItem("originalposts"))
+            originalpost.forEach((post) => {
                 if (post.body.toLowerCase().includes(searchInput.toLowerCase())) {
                     temp.push(post);
                 }
             });
             // set the filtered state based on what our rules added to temp
             setPosts(temp);
+            // console.log(temp)
+            // console.log(posts) // so the original post have been efected 
         } else {
             // if the search bar is empty, set posts back to original
-            console.log("is empty");
-            setPosts(posts);
+            let originalpost = JSON.parse(localStorage.getItem("originalposts"))
+            setPosts(originalpost);
         }
     }, [searchInput]);
 

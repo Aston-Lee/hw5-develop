@@ -49,8 +49,9 @@ export default function MainPage() {
             }, error => {
                 console.log(error);
             });
-        
+            localStorage.setItem("originalposts", JSON.stringify(posts))
     }, []);
+    
 
 
     var username = localStorage.getItem("username");
