@@ -5,26 +5,20 @@ import { useState, useEffect } from 'react';
 import {AiOutlineSearch} from "react-icons/ai"
 import "./RightBar.css";
 
-export default function RightBar( {filteredPosts, setFilteredPosts}) {
+export default function RightBar( {userobject, setUserObject, filteredPosts, setFilteredPosts}) {
 
     // filter users while using localstorage.getitem("followed")
-    const [usersFiltered, setusersFiltered] = useState(users.filter(user => localStorage.getItem("followed").includes(user.id)))
-
-    const [followarray, setfollowarray] = useState([])
-    if (localStorage.getItem("newuser") === false) {
-        setfollowarray(users[localStorage.getItem("id") - 1].followed)
-    }
+    const [usersFiltered, setusersFiltered] = useState(users.filter(user => userobject.followed.includes(user.id)))
 
     const removePeople = (uid) => {
-        // remove uid from users[localStorage.getItem("id")-1].followed
-       
         setusersFiltered(usersFiltered.filter(user => user.id !== uid))
-        setfollowarray(followarray.filter(user => user !== uid))
+        userobject.followed = userobject.followed.filter(user => user !== uid)
         setFilteredPosts(filteredPosts.filter(post => post.userId !== uid))
 
-        localStorage.setItem("followed", followarray)
+        setUserObject(userobject)
+        console.log(userobject)
         console.log(filteredPosts)
-        
+        localStorage.setItem("userobject", JSON.stringify(userobject))
     }
 
     return (

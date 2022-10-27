@@ -10,7 +10,7 @@ import { IconContext } from 'react-icons';
 export default function SideBar() {
     const [sidebar, setSidebar] = useState(false);
     
-    console.log(localStorage.getItem("newuser"))
+    // console.log(localStorage.getItem("newuser"))
     const [sidearray, setsidearray] = useState(SidebarData)
 
     const removeItem = (index) => {

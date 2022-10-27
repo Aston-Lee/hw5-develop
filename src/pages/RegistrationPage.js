@@ -13,7 +13,8 @@ export default function RegistrationPage() {
         zipcode: "",
         password1: "",
         password2: "",
-        newuser: 1
+        newuser: true,
+        followed: []
     });
 
     const verified = true;
@@ -38,6 +39,7 @@ export default function RegistrationPage() {
             localStorage.setItem("newuser", true);
             localStorage.setItem("catchphrase", "happy day");
             localStorage.setItem("followed", "[]");
+            localStorage.setItem("userobject", JSON.stringify(Input));
             navigate('/MainPage')
         }
     };

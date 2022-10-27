@@ -74,7 +74,7 @@ export default function RegistrationPage() {
             localStorage.setItem("newuser", false)
             localStorage.setItem("followed", user.followed)
 
-            // localStorage.setItem("userobject", JSON.stringify(user))
+            localStorage.setItem("userobject", JSON.stringify(user))
 
             //using redux to store user info
             // const action = { type: 'LOGIN', payload: user };
