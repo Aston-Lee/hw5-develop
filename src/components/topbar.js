@@ -33,8 +33,6 @@ export default function Topbar({ posts, setPosts }) {
             });
             // set the filtered state based on what our rules added to temp
             setPosts(temp);
-            // console.log(temp)
-            // console.log(posts) // so the original post have been efected 
         } else {
             // if the search bar is empty, set posts back to original
             let originalpost = JSON.parse(localStorage.getItem("originalposts"))

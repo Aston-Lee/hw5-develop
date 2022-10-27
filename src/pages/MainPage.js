@@ -46,39 +46,22 @@ export default function MainPage() {
                     return { ...post, timestamp }
                 })
                 setPosts(tmpposts);
+                console.log(tmpposts);
+                localStorage.setItem("originalposts", JSON.stringify(tmpposts))
             }, error => {
                 console.log(error);
             });
-            localStorage.setItem("originalposts", JSON.stringify(posts))
+            console.log(posts)
+            // localStorage.setItem("originalposts", JSON.stringify(posts))
     }, []);
+
+    console.log(userobject)
     
 
 
     var username = localStorage.getItem("username");
     var newuser = localStorage.getItem("newuser");
 
-    // let followList = []
-    // if (newuser === true) {
-    //     followList = []
-    // } else {
-    //     // get followed from local storage and make it array
-    //     followList = localStorage.getItem("followed")
-    // }
-
-    // console.log(followList)
-    // filteredPosts = posts?.filter(post => followList.includes(post.userId))
-    // console.log(filteredPosts)
-    
-    // useEffect(() => {
-    //     setFilteredPosts(filteredPosts)
-    // }, error => {
-    //     console.log(error);
-    // });
-
-    // create useeffect that update filered posts when userobject.followed changes
-    // useEffect(() => {
-    //     setFilteredPosts(posts?.filter(post => userobject.followed.includes(post.userId)))
-    // }, [userobject.followed]);
 
  
     return (
