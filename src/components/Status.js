@@ -11,6 +11,8 @@ export default function Status() {
 
     function gernerateStatus() {
         setmessage(inputRef.current.value)
+        localStorage.setItem("catchPhrase", inputRef.current.value)
+        inputRef.current.value = "";
     }
     
     // get value from localstorage catchPhrase

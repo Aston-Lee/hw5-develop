@@ -10,8 +10,10 @@ export default function RightBar( {filteredPosts, setFilteredPosts}) {
     // filter users while using localstorage.getitem("followed")
     const [usersFiltered, setusersFiltered] = useState(users.filter(user => localStorage.getItem("followed").includes(user.id)))
 
-    
-    const [followarray, setfollowarray] = useState(users[localStorage.getItem("id") - 1].followed)
+    const [followarray, setfollowarray] = useState([])
+    if (localStorage.getItem("newuser") === false) {
+        setfollowarray(users[localStorage.getItem("id") - 1].followed)
+    }
 
     const removePeople = (uid) => {
         // remove uid from users[localStorage.getItem("id")-1].followed
