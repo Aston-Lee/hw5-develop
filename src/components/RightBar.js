@@ -24,18 +24,18 @@ export default function RightBar( {userobject, setUserObject, filteredPosts, set
     return (
         <>  
             <h4 className="rightbarTitle">Subscribed list</h4>
-            <div className="rightbarsearchbar">
+            {/* <div className="rightbarsearchbar">
                 <AiOutlineSearch className="searchIcon" />
                 <input
                     placeholder="Search for friends"
                     className="searchInput"
                 />
-            </div>
+            </div> */}
             {usersFiltered.map((u) => {
                 return (
                     <div>
                         <ul className="rightbarFriendList">
-                            <div>
+                            <div className='searchfriend'>
                                 <Online key={u.id} user={u} />
                             </div>
                             <div>
