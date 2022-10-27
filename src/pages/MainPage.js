@@ -57,7 +57,10 @@ export default function MainPage() {
 
     console.log(userobject)
     
-
+    useEffect(() => {
+        setUserObject(userobject)
+        console.log(userobject.followed)
+    }, [userobject])
 
     var username = localStorage.getItem("username");
     var newuser = localStorage.getItem("newuser");
@@ -93,7 +96,7 @@ export default function MainPage() {
                 </div>
                 <div className="gridformat">
                     <div className="searcharea" tabIndex={0}>
-                        <SearchArea />  
+                        <SearchArea userobject={userobject} setUserObject={setUserObject} filteredPosts={posts} setFilteredPosts={setPosts}  />  
                     </div>
                     <div className="rightbar" tabIndex={0}>
                         <RightBar userobject={userobject} setUserObject={setUserObject} filteredPosts={posts} setFilteredPosts={setPosts} />
