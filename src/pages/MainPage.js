@@ -85,7 +85,7 @@ export default function MainPage() {
         <>
             <header>
 
-                <Topbar />
+                <Topbar posts={posts} setPosts={setPosts}/>
                 <div className="container">
                     <NewPostSection username={localStorage.getItem("username")} posts={NewPost} setPosts={setNewPost} />
                     <Status />
