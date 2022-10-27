@@ -24,21 +24,14 @@ export default function RightBar( {userobject, setUserObject, filteredPosts, set
     return (
         <>  
             <h4 className="rightbarTitle">Subscribed list</h4>
-            {/* <div className="rightbarsearchbar">
-                <AiOutlineSearch className="searchIcon" />
-                <input
-                    placeholder="Search for friends"
-                    className="searchInput"
-                />
-            </div> */}
             {usersFiltered.map((u) => {
                 return (
                     <div>
                         <ul className="rightbarFriendList">
-                            <div className='searchfriend'>
+                            <div className='rightbarLeft'>
                                 <Online key={u.id} user={u} />
                             </div>
-                            <div>
+                            <div classname="rightbarRight" >
                                 <button onClick={(e) => removePeople(u.id)} className='unfollow-Button' >unfollow</button>
                             </div>
                         </ul>
@@ -47,29 +40,4 @@ export default function RightBar( {userobject, setUserObject, filteredPosts, set
             })}
         </>
     )
-
-
-    // return (
-    //     <>
-    //         {sidearray.map((item, index) => {
-    //             return (
-    //                 <div className='profile-container' key={index} >
-
-    //                     <img className={item.cName} src={item.icon} />
-    //                     <div className='profile-text'>
-    //                         <span>{item.title}</span>
-    //                     </div>
-    //                     <div className='profile-status'>
-    //                         <span>{item.status}</span>
-    //                     </div>
-    //                     <div>
-    //                         {/* <button onClick={removeItem({index})} className='unfollow-Button' >unfollow</button> */}
-    //                     </div>
-
-    //                 </div>
-    //             );
-    //         })}
-
-    //     </>
-    // )
 }

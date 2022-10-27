@@ -113,7 +113,7 @@ end of header
     position: fixed;
     right: 50px;
     bottom: 0;
-    width: 30%;
+    width: 40%;
     border-radius: 20px;
     /* used https://cssgenerator.org/box-shadow-css-generator.html */
     box-shadow: 3px 6px 5px 0px rgba(0, 9, 28, 0.73);
@@ -121,12 +121,14 @@ end of header
     -moz-box-shadow: 3px 6px 5px 0px rgba(0, 9, 28, 0.73);
     /* padding: 20px; */
     margin-bottom: 20px;
+    overflow-y: scroll;
+    max-height: 400px;
 }
 
 .searcharea {
     position: fixed;
     right: 50px;
-    bottom: 800px;
+    bottom: 900px;
     width: 30%;
     border-radius: 20px;
     /* used https://cssgenerator.org/box-shadow-css-generator.html */

@@ -25,29 +25,19 @@ export default function SearchArea({ userobject, setUserObject, filteredPosts, s
     }
   }, [search])
 
+  const tmpposts = filteredPosts
 
-  // console.log(usersFiltered)
-  // let originalpost = JSON.parse(localStorage.getItem("originalpost"))
-  // console.log(originalpost)
-
-  // addpeople use uid and added into userobject.followed
-  function addPeople(uid) {
-    let originalpost = JSON.parse(localStorage.getItem("originalpost"))
-    let tmpuserobject = userobject
-    tmpuserobject.followed.push(uid)
-    setUserObject(tmpuserobject)
-    console.log(userobject)
+  const addPeople = (uid) => {
+    // setusersFiltered(usersFiltered.filter(user => user.id !== uid))
+    // userobject.followed = userobject.followed.filter(user => user !== uid)
+    userobject.followed.indexOf(uid) === -1 ? userobject.followed.push(uid) : console.log("This item already exists");
+    // setFilteredPosts(filteredPosts.filter(post => post.userId !== uid))
+    setFilteredPosts(tmpposts.filter(post => userobject.followed.includes(post.userId)))
+    setUserObject(userobject)
     localStorage.setItem("userobject", JSON.stringify(userobject))
-    setFilteredPosts(originalpost.filter(post => userobject.followed.includes(post.userId)))
+    console.log(userobject)
     console.log(filteredPosts)
-    console.log(originalpost)
-    console.log(userobject.followed)
-    console.log(originalpost.filter(post => userobject.followed.includes(post.userId)))
-
-    // userobject.followed = [...userobject.followed, uid]
-    // setFilteredPosts(originalpost.filter(post => post.userId.includes(uid)))
-    // console.log(userobject.followed)
-    // setUserObject(userobject)
+    window.location.reload(false);
   }
 
 
