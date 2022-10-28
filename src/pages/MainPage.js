@@ -22,6 +22,7 @@ export default function MainPage() {
 
     const [users, setUsers] = useState();
     const [posts, setPosts] = useState();
+    const [comments, setComments] = useState();
 
     let [filteredPosts, setFilteredPosts] = useState();
     let [NewPost, setNewPost] = useState([]);
@@ -35,7 +36,27 @@ export default function MainPage() {
         setUsers(response);
     };
 
+    const [images, setImages] = useState([])
     useEffect(() => {
+        
+        const fetchImages = async () => {
+
+            axios.get("https://api.thecatapi.com/v1/images/search?limit=100")
+            .then(res => {
+                setImages(res.data)
+            })
+
+            // const response = await fetch(
+            // //   "https://api.unsplash.com/photos?client_id=slEQ6gVGydzmTuPMyJVA8nM4Rywehc0lK1Aq6qIUM0U"
+            // "https://api.thecatapi.com/v1/images/search?limit=100"
+            // )
+            // const data = await response.json()
+            // console.log(data)
+            // setImages(data)
+          }
+      
+        fetchImages()
+
         getUsersData();
         axios.get('https://jsonplaceholder.typicode.com/posts')
             .then(response => {
@@ -51,12 +72,29 @@ export default function MainPage() {
             }, error => {
                 console.log(error);
             });
-            console.log(posts)
-            // localStorage.setItem("originalposts", JSON.stringify(posts))
+        console.log(posts)
+        // localStorage.setItem("originalposts", JSON.stringify(posts))
+        axios.get('https://dummyjson.com/comments?limit=100')
+            .then(response => {
+                setComments(response.data);
+                // console.log(comments)
+            }, error => {
+                console.log(error);
+            });
+        console.log(comments)
+
+        // map comments.comments to posts using id
+        // const tmppost = posts.map(post => {
+        //     const tmpcomments = comments.comments.filter(comment => comment.id === post.id)[0].body
+        //     return { ...post, tmpcomments }
+        // })
+        // console.log(tmppost)
+        // setPosts(tmppost)
     }, []);
 
-    console.log(userobject)
-    
+    console.log(images)
+
+
     useEffect(() => {
         setUserObject(userobject)
         console.log(userobject.followed)
@@ -66,13 +104,13 @@ export default function MainPage() {
     var newuser = localStorage.getItem("newuser");
 
 
- 
+
     return (
 
         <>
             <header>
 
-                <Topbar posts={posts} setPosts={setPosts}/>
+                <Topbar posts={posts} setPosts={setPosts} />
                 <div className="container">
                     <NewPostSection userobject={userobject} setUserObject={setUserObject} username={localStorage.getItem("username")} posts={NewPost} setPosts={setNewPost} />
                     <Status />
@@ -84,7 +122,7 @@ export default function MainPage() {
                         {NewPost.map((p) => (
                             <Post key={p.index} post={p} userobject={userobject} setUserObject={setUserObject} />
                         ))}
- 
+
                         {posts?.filter(post => userobject.followed.includes(post.userId)).sort((a, b) => b.timestamp - a.timestamp).map(post => (
                             <Post2 userobject={userobject} setUserObject={setUserObject} post={post} key={post.id} username={username} newuser={newuser} />
                         ))}
@@ -96,7 +134,7 @@ export default function MainPage() {
                 </div>
                 <div className="gridformat">
                     <div className="searcharea" tabIndex={0}>
-                        <SearchArea userobject={userobject} setUserObject={setUserObject} filteredPosts={posts} setFilteredPosts={setPosts}  />  
+                        <SearchArea userobject={userobject} setUserObject={setUserObject} filteredPosts={posts} setFilteredPosts={setPosts} />
                     </div>
                     <div className="rightbar" tabIndex={0}>
                         <RightBar userobject={userobject} setUserObject={setUserObject} filteredPosts={posts} setFilteredPosts={setPosts} />

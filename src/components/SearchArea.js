@@ -14,11 +14,11 @@ export default function SearchArea({ userobject, setUserObject, filteredPosts, s
   const [usersFiltered, setusersFiltered] = useState([])
   // useLayoutEffect is used to prevent the page from rendering before the data is fetched
   useLayoutEffect(() => {
-    
 
     if (search.length > 0) {
       setusersFiltered(users.filter(user => user.username.toLowerCase().includes(search.toLowerCase())))
       console.log(usersFiltered)
+
     }
     else {
       setusersFiltered([])
@@ -66,6 +66,10 @@ export default function SearchArea({ userobject, setUserObject, filteredPosts, s
             </>
           )
         })}
+
+        {/* // if userfiltered is none, then generate normal message */}
+        {usersFiltered.length === 0 && <div className='remindtext'>No results found, <br></br>type something or try search for another username</div>}
+          
       </div>
     </>
   )

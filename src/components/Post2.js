@@ -3,9 +3,16 @@ import "./Post.css";
 // import { Users } from '../Data';
 import { users } from '../users';
 import { Comment, Header } from 'semantic-ui-react'
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 export default function Post2({ userobject, setUserObject, post, username, newuser }) {
-
+    const [images, setImages] = useState([])
+    // axios.get('https://api.thecatapi.com/v1/images/search')
+    // .then(res => {
+    //     setImages(res.data)
+    // })
+    // console.log(images.url)
 
 
     return (
@@ -23,7 +30,7 @@ export default function Post2({ userobject, setUserObject, post, username, newus
                     </div>
                 </div>
                 <div className='postMain'>
-                    <img className='postMainPic' src={post.photo} />
+                    <img className='postMainPic' src={images.url} />
 
                 </div>
                 <div className='postBot'>
