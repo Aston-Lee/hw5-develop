@@ -6,13 +6,34 @@ import { Comment, Header } from 'semantic-ui-react'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-export default function Post2({ userobject, setUserObject, post, username, newuser }) {
-    const [images, setImages] = useState([])
-    // axios.get('https://api.thecatapi.com/v1/images/search')
-    // .then(res => {
-    //     setImages(res.data)
-    // })
-    // console.log(images.url)
+export default function Post2({ comments, userobject, setUserObject, post, username, newuser }) {
+
+    // let clientId = "slEQ6gVGydzmTuPMyJVA8nM4Rywehc0lK1Aq6qIUM0U"
+    // let endpoint = `https://api.unsplash.com/photos/random?client_id=${clientId}`
+
+    // using cat api
+    let endpoint = "https://api.thecatapi.com/v1/images/search?limit=1"
+
+    const [url, setUrl] = useState("")
+
+    const [comment1, setComment1] = useState("")
+    const [comment2, setComment2] = useState("")
+
+    useEffect(() => {
+
+        fetch(endpoint)
+            .then(function (response) {
+                return response.json();
+            }).then(function (jsonData) {
+                setUrl(jsonData[0].url)
+            })
+
+        let randomNum1 = Math.floor(Math.random() * 100)
+        let randomNum2 = Math.floor(Math.random() * 100)
+        setComment1(comments[randomNum1].body)
+        setComment2(comments[randomNum2].body)
+    }, [])
+    const [hidden, setHidden] = useState(true);
 
 
     return (
@@ -30,22 +51,23 @@ export default function Post2({ userobject, setUserObject, post, username, newus
                     </div>
                 </div>
                 <div className='postMain'>
-                    <img className='postMainPic' src={images.url} />
-
+                    <img className='postMainPic' src={url} />
                 </div>
                 <div className='postBot'>
                     <div className='postBotLeft'>
                         <span className='postMainCaptions'>{post?.body} </span>
                     </div>
                     <div className='postBotRight'>
-                        <button className='postComment'> Comment</button>
+                        <button id='postComment' className='postComment'> Comment</button>
                     </div>
                 </div>
-                <div>
-                    
-                    The quick brown fox ...
+                <div id='commentarea' className='commentarea'>
+                    {!hidden ? <p> comment1 {comment1}<br></br>comment2 :{comment2}  </p> : null}
+                    <button  className='postComment' onClick={() => setHidden(s => !s)}>
+                     show hide comment
+                    </button>
                 </div>
-                
+
             </div>
         </div>
     )

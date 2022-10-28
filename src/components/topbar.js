@@ -1,5 +1,5 @@
 import "./topbar.css";
-import SideBar from "./SideBar"
+// import SideBar from "./SideBar"
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 // import { Search } from "@material-ui/icons";
 import { AiOutlineSearch } from "react-icons/ai"
