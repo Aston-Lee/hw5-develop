@@ -1,3 +1,5 @@
+## use 1 slip day
+
 ### for testing user(registered), please use json users, eg.
 ### username: Bret 
 ### password: Kulas Light     

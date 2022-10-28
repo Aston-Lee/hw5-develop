@@ -3,8 +3,7 @@ import './NewPostSection.css'
 // import { PermMedia } from "@material-ui/icons"
 // import { BiImageAdd } from 'react-icons/bi';
 
-
-export default function NewPost({username, posts, setPosts }) {
+export default function NewPost({userobject, setUserObject, username, posts, setPosts }) {
 
     const inputRef = useRef(null);
 
@@ -47,7 +46,7 @@ export default function NewPost({username, posts, setPosts }) {
             <div className='NewPostContainer' >
                 <div className='NewPostWrapper'>
                     <div className='NewPostTop'>
-                        <img className='NewPostProfilePic' src="https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/1e4991ed-e574-41e1-b9e2-544fcb4eb1bf/DSC00563.jpg?format=1000w" />
+                        <img className='NewPostProfilePic' src={userobject.profilePicture} />
                         {/* <span> Username</span> */}
                         <div className='usernamespan' ><span>{username}</span></div>
                         <input ref={inputRef} type="text" id="message" name="message" placeholder="Share Something new?" className="NewPostInput" />

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Topbar from '../components/topbar'
 import { users } from '../users'
@@ -91,22 +91,19 @@ export default function ProfilePage() {
             // localStorage.setItem("user", JSON.stringify(Input));
             // inputRef.current.value
             localStorage.setItem("username", usernameinputRef.current.value || Input.username);
-            localStorage.setItem("displayname", displayinputRef.current.value || Input.displayname);
+            // localStorage.setItem("displayname", displayinputRef.current.value || Input.displayname);
             localStorage.setItem("email", emailinputRef.current.value || Input.email);
             localStorage.setItem("phone", phoneinputRef.current.value || Input.phone);
-            localStorage.setItem("birthday", birthdayinputRef.current.value || Input.birthday);
             localStorage.setItem("zipcode", zipcodeinputRef.current.value || Input.zipcode);
             localStorage.setItem("password1", password1inputRef.current.value || Input.password1);
             localStorage.setItem("password2", password2inputRef.current.value || Input.password2);
 
-            usernameinputRef.current.value = null;
-            displayinputRef.current.value = null
-            emailinputRef.current.value = null
-            phoneinputRef.current.value = null
-            birthdayinputRef.current.value = null
-            zipcodeinputRef.current.value = null
-            password1inputRef.current.value = null
-            password2inputRef.current.value = null
+            usernameinputRef.current.value = "";
+            emailinputRef.current.value = "";
+            phoneinputRef.current.value = "";
+            zipcodeinputRef.current.value = "";
+            password1inputRef.current.value = "";
+            password2inputRef.current.value = "";
 
             // navigate('/MainPage')
         }
@@ -138,14 +135,15 @@ export default function ProfilePage() {
         event.target.value = null;
     }
 
-    //set url for profile picture
-    if (localStorage.getItem("newuser") == false) {
-        localStorage.setItem("profilepicture", "https://www.w3schools.com/howto/img_avatar.png")
-    } else {
-        localStorage.setItem("profilepicture", users.filter(user => user.username === localStorage.getItem("username"))[0].profilePicture )
-    }
-    // const url = users.filter(user => user.username === localStorage.getItem("username"))[0].profilePicture
+    // const [userobject, setUserobject] = useState(JSON.parse(localStorage.getItem("useobject"))
+    
 
+    
+    const userobject = JSON.parse(localStorage.getItem("userobject"));
+    console.log(userobject)
+    console.log(userobject.profilePicture)
+    
+    
     return (
         <div className='RegFormOuter'>
             <form className='RegFormContainer' id="Profilepage" onSubmit={handleSubmit} >
@@ -158,7 +156,7 @@ export default function ProfilePage() {
                 />
                 <div>
                     {/* <img className='profilePicture' src={users.filter(user => user.username === localStorage.getItem("username"))[0].profilePicture} /> */}
-                    <img className='profilePicture' src={localStorage.getItem("profilepicture")} />
+                    <img className='profilePicture' src={userobject.profilePicture} />
                 </div>
                 <button className='PostButton' onClick={uploadhandleClick}>
                     {/* <BiImageAdd className='videoPost'/> */}

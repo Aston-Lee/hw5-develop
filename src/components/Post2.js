@@ -4,7 +4,10 @@ import "./Post.css";
 import { users } from '../users';
 import { Comment, Header } from 'semantic-ui-react'
 
-export default function Post2({ post, username, newuser }) {
+export default function Post2({ userobject, setUserObject, post, username, newuser }) {
+
+
+
     return (
         <div className='post'>
             <div className='postWrapper'>

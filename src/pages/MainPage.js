@@ -4,7 +4,7 @@ import "./MainPage.css";
 import { useEffect, useState } from 'react';
 
 import Topbar from "../components/topbar";
-// import Post from "../components/Post"
+import Post from "../components/Post"
 import Post2 from "../components/Post2"
 import NewPostSection from "../components/NewPostSection"
 import RightBar from "../components/RightBar"
@@ -74,7 +74,7 @@ export default function MainPage() {
 
                 <Topbar posts={posts} setPosts={setPosts}/>
                 <div className="container">
-                    <NewPostSection username={localStorage.getItem("username")} posts={NewPost} setPosts={setNewPost} />
+                    <NewPostSection userobject={userobject} setUserObject={setUserObject} username={localStorage.getItem("username")} posts={NewPost} setPosts={setNewPost} />
                     <Status />
                 </div>
             </header>
@@ -82,11 +82,11 @@ export default function MainPage() {
                 <div className="gridformat">
                     <div className="gridpost" tabIndex={0}>
                         {NewPost.map((p) => (
-                            <Post2 key={p.index} post={p} />
+                            <Post key={p.index} post={p} userobject={userobject} setUserObject={setUserObject} />
                         ))}
  
                         {posts?.filter(post => userobject.followed.includes(post.userId)).sort((a, b) => b.timestamp - a.timestamp).map(post => (
-                            <Post2 post={post} key={post.id} username={username} newuser={newuser} />
+                            <Post2 userobject={userobject} setUserObject={setUserObject} post={post} key={post.id} username={username} newuser={newuser} />
                         ))}
 
                         {/* {filteredPosts?.sort((a, b) => b.timestamp - a.timestamp).map(post => (

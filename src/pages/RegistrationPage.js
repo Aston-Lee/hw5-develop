@@ -14,6 +14,7 @@ export default function RegistrationPage() {
         password1: "",
         password2: "",
         newuser: true,
+        profilePicture: "https://images.squarespace-cdn.com/content/v1/5e59ec62d379cf1bffbb599b/1583286027530-TYRO2L904BLQ6KG26L8Z/DSC09989.jpg?format=500w",
         followed: []
     });
 
@@ -27,7 +28,6 @@ export default function RegistrationPage() {
 
         console.log(verified)
         if (verified===true){
-            // localStorage.setItem("user", JSON.stringify(Input));
             localStorage.setItem("username", Input.username);
             localStorage.setItem("displayname",Input.displayname);
             localStorage.setItem("email", Input.email);
@@ -38,6 +38,7 @@ export default function RegistrationPage() {
             localStorage.setItem("password2", Input.password2);
             localStorage.setItem("newuser", true);
             localStorage.setItem("catchphrase", "happy day");
+            localStorage.setItem("profilePicture", Input.profilepicture);
             localStorage.setItem("followed", "[]");
             localStorage.setItem("userobject", JSON.stringify(Input));
             navigate('/MainPage')

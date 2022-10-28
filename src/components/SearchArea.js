@@ -28,10 +28,7 @@ export default function SearchArea({ userobject, setUserObject, filteredPosts, s
   const tmpposts = filteredPosts
 
   const addPeople = (uid) => {
-    // setusersFiltered(usersFiltered.filter(user => user.id !== uid))
-    // userobject.followed = userobject.followed.filter(user => user !== uid)
     userobject.followed.indexOf(uid) === -1 ? userobject.followed.push(uid) : console.log("This item already exists");
-    // setFilteredPosts(filteredPosts.filter(post => post.userId !== uid))
     setFilteredPosts(tmpposts.filter(post => userobject.followed.includes(post.userId)))
     setUserObject(userobject)
     localStorage.setItem("userobject", JSON.stringify(userobject))
